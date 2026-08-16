@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+:root {
+  --color-background: #000000;
+  --color-foreground: #FFFFFF;
+  --color-surface: #111111;
+  --color-elevated: #181818;
+  --color-border: #292929;
+  --color-primary: #FFFFFF;
+  --color-secondary: #B3B3B3;
+  --color-accent: #FFFFFF;
+  --color-success: #FFFFFF;
+  --color-warning: #D4D4D4;
+  --color-error: #FFFFFF;
+  --color-muted: #737373;
+  --color-secondary-text: #B3B3B3;
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-geist-mono);
+}
+
+.light {
+  --color-background: #FFFFFF;
+  --color-foreground: #000000;
+  --color-surface: #F5F5F5;
+  --color-elevated: #FFFFFF;
+  --color-border: #D4D4D4;
+  --color-primary: #000000;
+  --color-secondary: #737373;
+  --color-accent: #000000;
+  --color-success: #000000;
+  --color-warning: #737373;
+  --color-error: #000000;
+  --color-muted: #9CA3AF;
+  --color-secondary-text: #737373;
+}
+
+@theme inline {
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-foreground);
+  --color-surface: var(--color-surface);
+  --color-elevated: var(--color-elevated);
+  --color-border: var(--color-border);
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-accent: var(--color-accent);
+  --color-success: var(--color-success);
+  --color-warning: var(--color-warning);
+  --color-error: var(--color-error);
+  --color-muted: var(--color-muted);
+  --color-secondary-text: var(--color-secondary-text);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+}
+
+::selection {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-muted);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
